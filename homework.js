@@ -6,11 +6,52 @@
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
 
+const peopleList = ['Candace', 'Ordel', 'Marion']
+
+function remove(arrayName, personName) {
+  if (arrayName.indexOf(personName) === -1) {
+    return arrayName
+  } else {
+    while (arrayName.indexOf(personName) !== -1) {
+      let indx = arrayName.indexOf(personName)
+      arrayName.splice(indx, 1)
+    }
+  }
+  return arrayName
+}
+remove(peopleList, 'Candace')
+
+console.log(peopleList)
+
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
 
+function remove(arrayName, personName) {
+  let arrayCopy = arrayName.slice()
+  if (arrayName.indexOf(personName) === -1) {
+    return arrayName
+  } else {
+    while (arrayCopy.indexOf(personName) !== -1) {
+      let indx = arrayCopy.indexOf(personName)
+      arrayCopy.splice(indx, 1)
+    }
+  }
+  return arrayCopy
+}
+
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
+
+let numbers=[1,2,3,4,5]
+
+function sum (arrayOfNumbers) {
+  let total=0
+  for (let number of arrayOfNumbers){
+    total+=number
+  }
+  return total
+}
+
 
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
