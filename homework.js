@@ -111,16 +111,16 @@ function minimum(arrayOfNumbers) {
 function selectionSort(arrayOfNumbers) {
   let arrayCopy = arrayOfNumbers.slice(0)
   let sortedArray = []
-  let counter = 0
-  while (counter < arrayCopy.length) {
+  // let counter = 0
+  while (arrayCopy.length!==0) {
     for (i = 0; i < arrayCopy.length; i++) {
       if (arrayCopy[i] === (Math.min.apply(null, arrayCopy))) {
         sortedArray.push(arrayCopy[i])
-        arrayCopy.splice(arrayCopy[i])
-      }
+        arrayCopy.splice(i, 1)
+      } 
     }
   console.log("the value of sortedArray is "+sortedArray)
-  counter += 1
+  // counter += 1
   }
 return sortedArray
 }
