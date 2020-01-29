@@ -73,8 +73,8 @@ function average(arrayOfNumbers) {
 function minimum(arrayOfNumbers) {
   let smallest = arrayOfNumbers[0]
   let indexOfSmallest = 0
-  for (i=0; i<arrayOfNumbers.length; i++){
-    if (arrayOfNumbers[i] < smallest){
+  for (i = 0; i < arrayOfNumbers.length; i++) {
+    if (arrayOfNumbers[i] < smallest) {
       smallest = arrayOfNumbers[i]
       indexOfSmallest = i
     }
@@ -108,8 +108,22 @@ function minimum(arrayOfNumbers) {
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
 
-
-
+function selectionSort(arrayOfNumbers) {
+  let arrayCopy = arrayOfNumbers.slice(0)
+  let sortedArray = []
+  let counter = 0
+  while (counter < arrayCopy.length) {
+    for (i = 0; i < arrayCopy.length; i++) {
+      if (arrayCopy[i] === (Math.min.apply(null, arrayCopy))) {
+        sortedArray.push(arrayCopy[i])
+        arrayCopy.splice(arrayCopy[i])
+      }
+    }
+  console.log("the value of sortedArray is "+sortedArray)
+  counter += 1
+  }
+return sortedArray
+}
 
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
