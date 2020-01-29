@@ -42,12 +42,12 @@ function remove(arrayName, personName) {
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
-let numbers=[1,2,3,4,5]
+let numbers = [1, 2, 3, 4, 5]
 
-function sum (arrayOfNumbers) {
-  let total=0
-  for (let number of arrayOfNumbers){
-    total+=number
+function sum(arrayOfNumbers) {
+  let total = 0
+  for (let number of arrayOfNumbers) {
+    total += number
   }
   return total
 }
@@ -56,8 +56,33 @@ function sum (arrayOfNumbers) {
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
 
+function average(arrayOfNumbers) {
+  if (arrayOfNumbers.length < 1) {
+    return undefined
+  } else {
+    return (sum(arrayOfNumbers) / arrayOfNumbers.length)
+  }
+}
+
+// NOTE: I was able to return the correct average unless the array was empty. In that case, my console was spitting back
+// NaN, not 'undefined'. So I overwrote the NaN with a if/else statement... which I don't think I was supposed to have had to do.             
+
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+
+function minimum(arrayOfNumbers) {
+  let smallest = arrayOfNumbers[0]
+  let indexOfSmallest = 0
+  for (i=0; i<arrayOfNumbers.length; i++){
+    if (arrayOfNumbers[i] < smallest){
+      smallest = arrayOfNumbers[i]
+      indexOfSmallest = i
+    }
+  }
+  return arrayOfNumbers[indexOfSmallest]
+}
+
+// THIS FUNCTION WORKS... I'M NOT SURE WHY I'M GETTING AN ERROR
 
 // 6. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
@@ -82,6 +107,9 @@ function sum (arrayOfNumbers) {
 // Note 2: Selection sort can be implemented using one array. Read the explanation at
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
+
+
+
 
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.

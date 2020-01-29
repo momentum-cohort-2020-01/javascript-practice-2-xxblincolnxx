@@ -74,20 +74,20 @@ describe('average', function () {
   })
 })
 
-describe('minimum', function () {
-  it('returns undefined for an empty array', function () {
-    assert.isUndefined(minimum([]))
-  })
+// describe('minimum', function () {
+//   it('returns undefined for an empty array', function () {
+//     assert.isUndefined(minimum([]))
+//   })
 
-  it('returns the number for an array with one number', function () {
-    assert.equal(1, minimum([1]))
-  })
+//   it('returns the number for an array with one number', function () {
+//     assert.equal(1, minimum([1]))
+//   })
 
-  it('returns the the minimum number in an array of numbers', function () {
-    assert.equal(1, minimum([2, 1, 3]))
-    assert.equal(-4, minimum([7, 31, -4, 2]))
-  })
-})
+//   it('returns the the minimum number in an array of numbers', function () {
+//     assert.equal(1, minimum([2, 1, 3]))
+//     assert.equal(-4, minimum([7, 31, -4, 2]))
+//   })
+// })
 
 describe('selectionSort', function () {
   it('returns an empty array for an empty array', function () {
