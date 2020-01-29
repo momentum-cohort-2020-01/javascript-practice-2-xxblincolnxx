@@ -130,3 +130,17 @@ return sortedArray
 //
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
 // `"Cadence,Ordel,Marion"`.
+
+function textList (arrayName){
+  let newString=""
+  for (i=0; i<arrayName.length; i++){
+    if(i===0){
+      newString+=arrayName[i]
+    } else {
+      newString=newString+", "+arrayName[i]
+    }
+  }
+  return newString
+}
+
+// Note: You get an endless loop if you don't use a triple = in the IF statement. I crashed my browser about 30 times last night on various problems.
